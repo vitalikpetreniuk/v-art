@@ -1,4 +1,11 @@
-$(function() {
+var exhibitions_start;
+var exhibitions_finish;
+var lastScrollTop = 0;
+var exhibitions;
+var exhibitions_distance;
+
+function loadScripts()
+{
 
 	$('.intro-carousel .owl-carousel').on('initialized.owl.carousel changed.owl.carousel', function(e) {
 	    if (!e.namespace)  {
@@ -48,8 +55,128 @@ $(function() {
 		$('.tab'+$(this).attr('href')).addClass('active');
 	})
 
+	$('.ca-artwork-tablist ul.tablist li a').on('click', function(e){
+		e.preventDefault();
+		e.stopPropagation();
+
+		$(this).parents('ul').find('li').removeClass('active');
+		$(this).parent().addClass('active');
+		$(this).parents('.ca-artwork-tablist').find('.artwork-tab').removeClass('active');
+		$('.artwork-tab'+$(this).attr('href')).addClass('active');
+	})
+	$('.ca-artwork-tablist ul.tablist li').eq(0).find('a').trigger('click');
+
 	$('button.menu-toggle').on('click', function(){
 		$('body').toggleClass('mobile-menu-opened');
 	})
 
+
+	$('.artworks-carousel .owl-carousel').owlCarousel({
+	    loop: true,
+	    nav: true,
+	    dots: false,
+	    slideTransition: 'cubic-bezier(.785,.135,.15,.86) 0s',
+	    responsive : {
+	    	// breakpoint from 0 up
+		    0 : {
+		    	items: 1,
+		        margin: 0
+		    },
+	    	// breakpoint from 768 up
+		    768 : {
+		    	items: 2,
+		        margin: 22
+		    },
+	    	// breakpoint from 1024 up
+		    1024 : {
+		    	items: 3,
+		        margin: 22
+		    },
+	    	// breakpoint from 1152 up
+		    1152 : {
+		        margin: 40
+		    },
+		    // breakpoint from 1281 up
+		    1281 : {
+		        margin: 42
+		    },
+		    // breakpoint from 1441 up
+		    1441 : {
+		        margin: 24
+		    }
+		}
+	});
+
+	$('.chapter-artwork_visual button').on('click', function(){
+		$('.chapter-artwork_visual').addClass('active');
+	})
+	$('.chapter-artwork_visual .vn-fullscreen').on('click', function(){
+		$('body').addClass('visual-lightbox-onscreen');
+	})
+	$('.visual-lightbox-close').on('click', function(){
+		$('body').removeClass('visual-lightbox-onscreen');
+	})
+}
+function exhibitions()
+{
+	let exhibitions_woman_current;
+	let exhibitions_cube_white_current;
+	let exhibitions_pyramid_current;
+	let exhibitions_cb1_current;
+	let exhibitions_cb2_current;
+	let exhibitions_cb3_current;
+
+	let exhibitions_woman = 40;
+	let exhibitions_cube_white = 47;
+	let exhibitions_pyramid_cb = 32;
+	let exhibitions_cb2 = 96;
+	let exhibitions_cb3 = 64;
+
+	exhibitions = $('.vart-exhibitions-projects .project.exhibitions');
+	exhibitions_start = $('.vart-exhibitions-projects .projects-list').offset().top + $('.vart-exhibitions-projects .projects-list').height() - 100 - $(window).height();
+	exhibitions_finish = $('.vart-exhibitions-projects .projects-list').offset().top + $(window).height()/2;
+	exhibitions_distance = exhibitions_finish - exhibitions_start;
+	exhibitions_distance = Math.round(exhibitions_distance * 100) / 100;
+
+	if($(window).width() > 1439)
+	{
+		exhibitions_woman_current = 40;
+		exhibitions_cube_white_current = 208;
+		exhibitions_pyramid_current = 210;
+		exhibitions_cb1_current = 383;
+		exhibitions_cb2_current = 303;
+		exhibitions_cb3_current = 430;
+	}
+
+	let coefficient_woman = exhibitions_woman/exhibitions_distance;
+	let coefficient_cube_white = exhibitions_cube_white/exhibitions_distance;
+	let coefficient_pyramid_cb = exhibitions_pyramid_cb/exhibitions_distance;
+	let coefficient_cb2 = exhibitions_cb2/exhibitions_distance;
+	let coefficient_cb3 = exhibitions_cb3/exhibitions_distance;
+
+	$(window).on('scroll', function(){
+		var st = $(this).scrollTop();
+		var scrolled = $(window).scrollTop();
+		let scrolled_in;
+
+		if(scrolled >= exhibitions_start && scrolled <= exhibitions_finish)
+		{
+			scrolled_in = scrolled - exhibitions_start;
+
+			exhibitions.find('.main').css('top',(exhibitions_woman_current-(scrolled_in*coefficient_woman))+'px');
+			exhibitions.find('.cube-white').css('top',(exhibitions_cube_white_current-(scrolled_in*coefficient_cube_white))+'px');
+			exhibitions.find('.pyramid').css('top',(exhibitions_pyramid_current+(scrolled_in*coefficient_pyramid_cb))+'px');
+			exhibitions.find('.cb1').css('top',(exhibitions_cb1_current+(scrolled_in*coefficient_pyramid_cb))+'px');
+			exhibitions.find('.cb2').css('top',(exhibitions_cb2_current+(scrolled_in*coefficient_cb2))+'px');
+			exhibitions.find('.cb3').css('top',(exhibitions_cb3_current+(scrolled_in*coefficient_cb3))+'px');
+		}
+
+		lastScrollTop = st;
+	})
+}
+
+
+$(function() {
+	loadScripts();
+	exhibitions();
 });
