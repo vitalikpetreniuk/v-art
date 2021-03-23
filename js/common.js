@@ -3,6 +3,7 @@ var exhibitions_finish;
 var lastScrollTop = 0;
 var exhibitions;
 var art_spaceship;
+var dartstudio;
 var exhibitions_distance;
 
 function loadScripts()
@@ -150,10 +151,8 @@ function exhibitions()
 	let exhibitions_cube_white_current;
 	let exhibitions_pyramid_current;
 	let exhibitions_cb1_current;
-	let art_spaceship_cb2_current;
-	let exhibitions_cb3_current;
-
 	let exhibitions_cb2_current;
+	let exhibitions_cb3_current;
 
 	let exhibitions_woman = 40;
 	let exhibitions_cube_white = 47;
@@ -161,12 +160,39 @@ function exhibitions()
 	let exhibitions_cb2 = 96;
 	let exhibitions_cb3 = 80;
 
-	let art_spaceship_cb2 = 32;
+	let art_spaceship_spaceman_current;
+	let art_spaceship_dots_current;
+	let art_spaceship_pyramid_current;
+	let art_spaceship_cube_black_current;
+	let art_spaceship_cb1_current;
+	let art_spaceship_cb2_current;
+
+	let art_spaceship_spaceman = 60;
+	let art_spaceship_dots = 110;
+	let art_spaceship_pyramid = 83;
+	let art_spaceship_cube_black = 45;
+	let art_spaceship_cb1 = 80;
+	let art_spaceship_cb2 = 34;
+
+	let dartstudio_head_current;
+	let dartstudio_triangle_current;
+	let dartstudio_pyramid_current;
+	let dartstudio_cb1_current;
+	let dartstudio_cb2_current;
+	let dartstudio_cb3_current;
+
+	let dartstudio_head = 48;
+	let dartstudio_triangle = 77;
+	let dartstudio_pyramid = 50;
+	let dartstudio_cb1 = 8;
+	let dartstudio_cb2 = 32;
+	let dartstudio_cb3 = 62;
 
 	exhibitions = $('.vart-exhibitions-projects .project.exhibitions');
 	art_spaceship = $('.vart-exhibitions-projects .project.art-spaceship');
+	dartstudio = $('.vart-exhibitions-projects .project.dartstudio');
 
-	exhibitions_start = $('.vart-exhibitions-projects .projects-list').offset().top + $('.vart-exhibitions-projects .projects-list').height() - $(window).height();
+	exhibitions_start = $('.vart-exhibitions-projects .projects-list').offset().top + $('.vart-exhibitions-projects .projects-list').height() - $(window).height() - 50;
 	exhibitions_finish = $('.vart-exhibitions-projects .projects-list').offset().top - 80;
 	exhibitions_distance = exhibitions_finish - exhibitions_start;
 	exhibitions_distance = Math.round(exhibitions_distance * 100) / 100;
@@ -180,7 +206,19 @@ function exhibitions()
 		exhibitions_cb2_current = 303;
 		exhibitions_cb3_current = 430;
 
-		art_spaceship_cb2_current = 502;
+		art_spaceship_spaceman_current = 60;
+		art_spaceship_dots_current = 140;
+		art_spaceship_pyramid_current = 160;
+		art_spaceship_cube_black_current = 374;
+		art_spaceship_cb1_current = 421;
+		art_spaceship_cb2_current = 444;
+
+		dartstudio_head_current = 48;
+		dartstudio_triangle_current = 140;
+		dartstudio_pyramid_current = 398;
+		dartstudio_cb1_current = 247;
+		dartstudio_cb2_current = 427;
+		dartstudio_cb3_current = 412;
 	}
 
 	let coefficient_woman = exhibitions_woman/exhibitions_distance;
@@ -189,7 +227,19 @@ function exhibitions()
 	let coefficient_cb2 = exhibitions_cb2/exhibitions_distance;
 	let coefficient_cb3 = exhibitions_cb3/exhibitions_distance;
 
+	let as_coefficient_spaceman = art_spaceship_spaceman/exhibitions_distance;
+	let as_coefficient_dots = art_spaceship_dots/exhibitions_distance;
+	let as_coefficient_pyramid = art_spaceship_pyramid/exhibitions_distance;
+	let as_coefficient_cube_black = art_spaceship_cube_black/exhibitions_distance;
+	let as_coefficient_cb1 = art_spaceship_cb1/exhibitions_distance;
 	let as_coefficient_cb2 = art_spaceship_cb2/exhibitions_distance;
+
+	let coefficient_ds_head = dartstudio_head/exhibitions_distance;
+	let coefficient_ds_triangle = dartstudio_triangle/exhibitions_distance;
+	let coefficient_ds_pyramid = dartstudio_pyramid/exhibitions_distance;
+	let coefficient_ds_cb1 = dartstudio_cb1/exhibitions_distance;
+	let coefficient_ds_cb2 = dartstudio_cb2/exhibitions_distance;
+	let coefficient_ds_cb3 = dartstudio_cb3/exhibitions_distance;
 	
 	$(window).on('scroll', function(){
 		var st = $(this).scrollTop();
@@ -207,8 +257,20 @@ function exhibitions()
 			exhibitions.find('.cb2').css('top',(exhibitions_cb2_current+(scrolled_in*coefficient_cb2))+'px');
 			exhibitions.find('.cb3').css('top',(exhibitions_cb3_current+(scrolled_in*coefficient_cb3))+'px');
 
-			console.log(art_spaceship_cb2_current+(scrolled_in*as_coefficient_cb2));
+			art_spaceship.find('.spaceman').css('top',(art_spaceship_spaceman_current-(scrolled_in*as_coefficient_spaceman))+'px');
+			art_spaceship.find('.dots').css('top',(art_spaceship_dots_current-(scrolled_in*as_coefficient_dots))+'px');
+			art_spaceship.find('.pyramid').css('top',(art_spaceship_pyramid_current-(scrolled_in*as_coefficient_pyramid))+'px');
+			art_spaceship.find('.cube-black').css('top',(art_spaceship_cube_black_current+(scrolled_in*as_coefficient_cube_black))+'px');
+			art_spaceship.find('.cb1').css('top',(art_spaceship_cb1_current+(scrolled_in*as_coefficient_cb1))+'px');
 			art_spaceship.find('.cb2').css('top',(art_spaceship_cb2_current+(scrolled_in*as_coefficient_cb2))+'px');
+
+			dartstudio.find('.head').css('top',(dartstudio_head_current-(scrolled_in*coefficient_ds_head))+'px');
+			dartstudio.find('.triangle').css('top',(dartstudio_triangle_current-(scrolled_in*coefficient_ds_triangle))+'px');
+			dartstudio.find('.pyramid').css('top',(dartstudio_pyramid_current+(scrolled_in*coefficient_ds_pyramid))+'px');
+
+			dartstudio.find('.cb1').css('top',(dartstudio_cb1_current-(scrolled_in*coefficient_ds_cb1))+'px');
+			dartstudio.find('.cb2').css('top',(dartstudio_cb2_current+(scrolled_in*coefficient_ds_cb2))+'px');
+			dartstudio.find('.cb3').css('top',(dartstudio_cb3_current+(scrolled_in*coefficient_ds_cb3))+'px');
 		}
 
 		lastScrollTop = st;
