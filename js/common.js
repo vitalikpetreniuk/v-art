@@ -2,15 +2,19 @@ var exhibitions_start;
 var exhibitions_finish;
 var lastScrollTop = 0;
 var exhibitions;
+var exhibitions_img;
 var art_spaceship;
+var art_spaceship_img;
 var dartstudio;
+var dartstudio_img;
 var exhibitions_distance;
 
 function loadScripts()
 {
-	let lang_active = $('.header-lang').find('li').eq(0).attr('lang');
-	let lang_active_text = $('.header-lang').find('li').eq(0).text();
-	$('.header-lang').find('li').eq(0).addClass('hidden');
+	let lang_active = $('.header-lang').find('li.active').attr('lang');
+	let lang_active_text = $('.header-lang').find('li.active').text();
+
+	$('.header-lang').find('li.active').addClass('hidden');
 	$('.header-lang').prepend('<span class="active '+lang_active_text+'">'+lang_active_text+'</span>');
 
 	$('.intro-carousel .owl-carousel').on('initialized.owl.carousel changed.owl.carousel', function(e) {
@@ -147,25 +151,41 @@ function loadScripts()
 }
 function exhibitions()
 {
-	let exhibitions_woman_current;
-	let exhibitions_cube_white_current;
-	let exhibitions_pyramid_current;
-	let exhibitions_cb1_current;
-	let exhibitions_cb2_current;
-	let exhibitions_cb3_current;
+
+	exhibitions = $('.vart-exhibitions-projects .project.exhibitions');
+	exhibitions_img = exhibitions.find('.project-image');
+	art_spaceship = $('.vart-exhibitions-projects .project.art-spaceship');
+	art_spaceship_img = art_spaceship.find('.project-image');
+	dartstudio = $('.vart-exhibitions-projects .project.dartstudio');
+	dartstudio_img = dartstudio.find('.project-image');
+
+	let exhibitions_woman_current = parseInt(exhibitions_img.find('.main').css('top').split('px')[0]);
+	let exhibitions_cube_white_current = parseInt(exhibitions_img.find('.cube-white').css('top').split('px')[0]);
+	let exhibitions_pyramid_current = parseInt(exhibitions_img.find('.pyramid').css('top').split('px')[0]);
+	let exhibitions_cb1_current = parseInt(exhibitions_img.find('.cb1').css('top').split('px')[0]);
+	let exhibitions_cb2_current = parseInt(exhibitions_img.find('.cb2').css('top').split('px')[0]);
+	let exhibitions_cb3_current = parseInt(exhibitions_img.find('.cb3').css('top').split('px')[0]);
+
+	let art_spaceship_spaceman_current = parseInt(art_spaceship_img.find('.spaceman').css('top').split('px')[0]);
+	let art_spaceship_dots_current = parseInt(art_spaceship_img.find('.dots').css('top').split('px')[0]);
+	let art_spaceship_pyramid_current = parseInt(art_spaceship_img.find('.pyramid').css('top').split('px')[0]);
+	let art_spaceship_cube_black_current = parseInt(art_spaceship_img.find('.cube-black').css('top').split('px')[0]);
+	let art_spaceship_cb1_current = parseInt(art_spaceship_img.find('.cb1').css('top').split('px')[0]);
+	let art_spaceship_cb2_current = parseInt(art_spaceship_img.find('.cb2').css('top').split('px')[0]);
+
+	let dartstudio_head_current = parseInt(dartstudio_img.find('.head').css('top').split('px')[0]);
+	let dartstudio_triangle_current = parseInt(dartstudio_img.find('.triangle').css('top').split('px')[0]);
+	let dartstudio_pyramid_current = parseInt(dartstudio_img.find('.pyramid').css('top').split('px')[0]);
+	let dartstudio_cb1_current = parseInt(dartstudio_img.find('.cb1').css('top').split('px')[0]);
+	let dartstudio_cb2_current = parseInt(dartstudio_img.find('.cb2').css('top').split('px')[0]);
+	let dartstudio_cb3_current = parseInt(dartstudio_img.find('.cb3').css('top').split('px')[0]);
+
 
 	let exhibitions_woman = 40;
 	let exhibitions_cube_white = 47;
 	let exhibitions_pyramid_cb = 32;
 	let exhibitions_cb2 = 96;
 	let exhibitions_cb3 = 80;
-
-	let art_spaceship_spaceman_current;
-	let art_spaceship_dots_current;
-	let art_spaceship_pyramid_current;
-	let art_spaceship_cube_black_current;
-	let art_spaceship_cb1_current;
-	let art_spaceship_cb2_current;
 
 	let art_spaceship_spaceman = 60;
 	let art_spaceship_dots = 110;
@@ -174,13 +194,6 @@ function exhibitions()
 	let art_spaceship_cb1 = 80;
 	let art_spaceship_cb2 = 34;
 
-	let dartstudio_head_current;
-	let dartstudio_triangle_current;
-	let dartstudio_pyramid_current;
-	let dartstudio_cb1_current;
-	let dartstudio_cb2_current;
-	let dartstudio_cb3_current;
-
 	let dartstudio_head = 48;
 	let dartstudio_triangle = 77;
 	let dartstudio_pyramid = 50;
@@ -188,38 +201,44 @@ function exhibitions()
 	let dartstudio_cb2 = 32;
 	let dartstudio_cb3 = 62;
 
-	exhibitions = $('.vart-exhibitions-projects .project.exhibitions');
-	art_spaceship = $('.vart-exhibitions-projects .project.art-spaceship');
-	dartstudio = $('.vart-exhibitions-projects .project.dartstudio');
+	if($(window).width() <= 1699)
+	{
+		let coef;
+
+		if($(window).width() > 1024)
+		{
+			coef = 0.78;
+		}else
+		{
+			coef = 0.68;
+		}
+
+		exhibitions_woman = exhibitions_woman*coef;
+		exhibitions_cube_white = exhibitions_cube_white*coef;
+		exhibitions_pyramid_cb = exhibitions_pyramid_cb*coef;
+		exhibitions_cb2 = exhibitions_cb2*coef;
+		exhibitions_cb3 = exhibitions_cb3*coef;
+
+		art_spaceship_spaceman = art_spaceship_spaceman*coef;
+		art_spaceship_dots = art_spaceship_dots*coef;
+		art_spaceship_pyramid = art_spaceship_pyramid*coef;
+		art_spaceship_cube_black = art_spaceship_cube_black*coef;
+		art_spaceship_cb1 = art_spaceship_cb1*coef;
+		art_spaceship_cb2 = art_spaceship_cb2*coef;
+
+		dartstudio_head = dartstudio_head*coef;
+		dartstudio_triangle = dartstudio_triangle*coef;
+		dartstudio_pyramid = dartstudio_pyramid*coef;
+		dartstudio_cb1 = dartstudio_cb1*coef;
+		dartstudio_cb2 = dartstudio_cb2*coef;
+		dartstudio_cb3 = dartstudio_cb3*coef;
+	}
+
 
 	exhibitions_start = $('.vart-exhibitions-projects .projects-list').offset().top + $('.vart-exhibitions-projects .projects-list').height() - $(window).height() - 50;
 	exhibitions_finish = $('.vart-exhibitions-projects .projects-list').offset().top - 80;
 	exhibitions_distance = exhibitions_finish - exhibitions_start;
 	exhibitions_distance = Math.round(exhibitions_distance * 100) / 100;
-
-	if($(window).width() > 1439)
-	{
-		exhibitions_woman_current = 40;
-		exhibitions_cube_white_current = 208;
-		exhibitions_pyramid_current = 210;
-		exhibitions_cb1_current = 383;
-		exhibitions_cb2_current = 303;
-		exhibitions_cb3_current = 430;
-
-		art_spaceship_spaceman_current = 60;
-		art_spaceship_dots_current = 140;
-		art_spaceship_pyramid_current = 160;
-		art_spaceship_cube_black_current = 374;
-		art_spaceship_cb1_current = 421;
-		art_spaceship_cb2_current = 444;
-
-		dartstudio_head_current = 48;
-		dartstudio_triangle_current = 140;
-		dartstudio_pyramid_current = 398;
-		dartstudio_cb1_current = 247;
-		dartstudio_cb2_current = 427;
-		dartstudio_cb3_current = 412;
-	}
 
 	let coefficient_woman = exhibitions_woman/exhibitions_distance;
 	let coefficient_cube_white = exhibitions_cube_white/exhibitions_distance;
@@ -267,10 +286,181 @@ function exhibitions()
 			dartstudio.find('.head').css('top',(dartstudio_head_current-(scrolled_in*coefficient_ds_head))+'px');
 			dartstudio.find('.triangle').css('top',(dartstudio_triangle_current-(scrolled_in*coefficient_ds_triangle))+'px');
 			dartstudio.find('.pyramid').css('top',(dartstudio_pyramid_current+(scrolled_in*coefficient_ds_pyramid))+'px');
-
 			dartstudio.find('.cb1').css('top',(dartstudio_cb1_current-(scrolled_in*coefficient_ds_cb1))+'px');
 			dartstudio.find('.cb2').css('top',(dartstudio_cb2_current+(scrolled_in*coefficient_ds_cb2))+'px');
 			dartstudio.find('.cb3').css('top',(dartstudio_cb3_current+(scrolled_in*coefficient_ds_cb3))+'px');
+		}
+
+		lastScrollTop = st;
+	})
+}
+function digitalArt()
+{
+	let digital_art = $('.about-image');
+
+	let w_flower_current = parseInt(digital_art.find('.flower').css('top').split('px')[0]);
+	let w_waves_current = parseInt(digital_art.find('.waves').css('left').split('px')[0]);
+	let w_digital_current = parseInt(digital_art.find('.digital').css('top').split('px')[0]);
+	let w_pyramid_blue_current = parseInt(digital_art.find('.pyramid-blue').css('top').split('px')[0]);
+	let w_pyramid_white_current = parseInt(digital_art.find('.pyramid-white').css('top').split('px')[0]);
+	let w_cbw1_current = parseInt(digital_art.find('.cbw1').css('top').split('px')[0]);
+	let w_cbw2_current = parseInt(digital_art.find('.cbw2').css('top').split('px')[0]);
+	let w_cbb1_current = parseInt(digital_art.find('.cbb1').css('top').split('px')[0]);
+	let w_cbb2_current = parseInt(digital_art.find('.cbb2').css('top').split('px')[0]);
+	let w_cb_black_current = parseInt(digital_art.find('.cube-black').css('top').split('px')[0]);
+
+	let w_flower = 52;
+	let w_waves = 50;
+	let w_digital = 25;
+	let w_pyramid_blue = 45;
+	let w_pyramid_white = 70;
+	let w_cbw1 = 62;
+	let w_cbw2 = 32;
+	let w_cbb1 = 110;
+	let w_cbb2 = 32;
+	let w_cb_black = 60;
+
+	if($(window).width() <= 1699)
+	{
+		let coef;
+
+		if($(window).width() > 1023)
+		{
+			coef = 0.76;
+		}else if($(window).width() <= 1023 && $(window).width() > 767)
+		{
+			coef = 0.72;
+		}else
+		{
+			coef = 0.63;
+		}
+
+		w_flower = w_flower*coef;
+		w_waves = w_waves*coef;
+		w_digital = w_digital*coef;
+		w_pyramid_blue = w_pyramid_blue*coef;
+		w_pyramid_white = w_pyramid_white*coef;
+		w_cbw1 = w_cbw1*coef;
+		w_cbw2 = w_cbw2*coef;
+		w_cbb1 = w_cbb1*coef;
+		w_cbb2 = w_cbb2*coef;
+		w_cb_black = w_cb_black*coef;
+	}
+
+
+	let da_start = $('.vart-intouch').offset().top - $(window).height() - 100;
+	if($(window).width() <= 767)
+	{
+		da_start = $('.vart-about .about-content').offset().top - $(window).height() - 50;
+	}
+	let da_finish = $('.vart-about .about-image').offset().top - 80;
+	let da_distance = da_finish - da_start;
+	da_distance = Math.round(da_distance * 100) / 100;
+
+	let coefficient_flower = w_flower/da_distance;
+	let coefficient_waves = w_waves/da_distance;
+	let coefficient_digital = w_digital/da_distance;
+	let coefficient_pyramid_blue = w_pyramid_blue/da_distance;
+	let coefficient_pyramid_white = w_pyramid_white/da_distance;
+	let coefficient_cbw1 = w_cbw1/da_distance;
+	let coefficient_cbw2 = w_cbw2/da_distance;
+	let coefficient_cbb1 = w_cbb1/da_distance;
+	let coefficient_cbb2 = w_cbb2/da_distance;
+	let coefficient_cb_black = w_cb_black/da_distance;
+
+	$(window).on('scroll', function(){
+		var st = $(this).scrollTop();
+		var scrolled = $(window).scrollTop();
+		let scrolled_in;
+
+		if(scrolled >= da_start && scrolled <= da_finish)
+		{
+			scrolled_in = scrolled - da_start;
+
+			digital_art.find('.flower').css('top',(w_flower_current+(scrolled_in*coefficient_flower))+'px');
+			digital_art.find('.waves').css('left',(w_waves_current+(scrolled_in*coefficient_waves))+'px');
+			digital_art.find('.digital').css('top',(w_digital_current-(scrolled_in*coefficient_digital))+'px');
+
+			digital_art.find('.pyramid-blue').css('top',(w_pyramid_blue_current-(scrolled_in*coefficient_pyramid_blue))+'px');
+			digital_art.find('.pyramid-white').css('top',(w_pyramid_white_current-(scrolled_in*coefficient_pyramid_white))+'px');
+
+			digital_art.find('.cbw1').css('top',(w_cbw1_current-(scrolled_in*coefficient_cbw1))+'px');
+			digital_art.find('.cbw2').css('top',(w_cbw2_current-(scrolled_in*coefficient_cbw2))+'px');
+
+			digital_art.find('.cbb1').css('top',(w_cbb1_current-(scrolled_in*coefficient_cbb1))+'px');
+			digital_art.find('.cbb2').css('top',(w_cbb2_current+(scrolled_in*coefficient_cbb2))+'px');
+
+			digital_art.find('.cube-black').css('top',(w_cb_black_current+(scrolled_in*coefficient_cb_black))+'px');
+		}
+
+		lastScrollTop = st;
+	})
+}
+function seoDigital()
+{
+	let seo_digital = $('.boost-image');
+
+	let seo_waves_current = parseInt(seo_digital.find('.waves').css('left').split('px')[0]);
+	let seo_triangle_current = parseInt(seo_digital.find('.triangle').css('top').split('px')[0]);
+	let seo_flower_current = parseInt(seo_digital.find('.flower').css('top').split('px')[0]);
+	let seo_pyramid_current = parseInt(seo_digital.find('.pyramid').css('top').split('px')[0]);
+	let seo_cbw_current = parseInt(seo_digital.find('.cube-white').css('top').split('px')[0]);
+	let seo_cbb_current = parseInt(seo_digital.find('.cube-blue').css('top').split('px')[0]);
+
+	let seo_waves = 130;
+	let seo_triangle = 72;
+	let seo_flower = 97;
+	let seo_pyramid = 96;
+	let seo_cbw = 62;
+	let seo_cbb = 35;
+
+	if($(window).width() <= 1699)
+	{
+		let coef;
+
+		if($(window).width() > 1024)
+		{
+			coef = 0.85;
+		}else
+		{
+			coef = 0.68;
+		}
+
+		seo_waves = seo_waves*coef;
+		seo_triangle = seo_triangle*coef;
+		seo_flower = seo_flower*coef;
+		seo_pyramid = seo_pyramid*coef;
+		seo_cbw = seo_cbw*coef;
+		seo_cbb = seo_cbb*coef;
+	}
+
+	let seo_start = $('.vart-boost .row:nth-child(2)').offset().top - $(window).height();
+	let seo_finish = $('.vart-boost .boost-image').offset().top - 120;
+	let seo_distance = seo_finish - seo_start;
+	seo_distance = Math.round(seo_distance * 100) / 100;
+
+	let coefficient_seo_waves = seo_waves/seo_distance;
+	let coefficient_seo_triangle = seo_triangle/seo_distance;
+	let coefficient_seo_flower = seo_flower/seo_distance;
+	let coefficient_seo_pyramid = seo_pyramid/seo_distance;
+	let coefficient_seo_cbw = seo_cbw/seo_distance;
+	let coefficient_seo_cbb = seo_cbb/seo_distance;
+
+	$(window).on('scroll', function(){
+		var st = $(this).scrollTop();
+		var scrolled = $(window).scrollTop();
+		let scrolled_in;
+
+		if(scrolled >= seo_start && scrolled <= seo_finish)
+		{
+			scrolled_in = scrolled - seo_start;
+
+			seo_digital.find('.waves').css('left',(seo_waves_current+(scrolled_in*coefficient_seo_waves))+'px');
+			seo_digital.find('.triangle').css('top',(seo_triangle_current+(scrolled_in*coefficient_seo_triangle))+'px');
+			seo_digital.find('.flower').css('top',(seo_flower_current+(scrolled_in*coefficient_seo_flower))+'px');
+			seo_digital.find('.pyramid').css('top',(seo_pyramid_current+(scrolled_in*coefficient_seo_pyramid))+'px');
+			seo_digital.find('.cube-white').css('top',(seo_cbw_current-(scrolled_in*coefficient_seo_cbw))+'px');
+			seo_digital.find('.cube-blue').css('top',(seo_cbb_current+(scrolled_in*coefficient_seo_cbb))+'px');
 		}
 
 		lastScrollTop = st;
@@ -281,8 +471,16 @@ function exhibitions()
 $(function() {
 	loadScripts();
 
-	if($('.vart-exhibitions-projects ').length)
+	if($('.vart-exhibitions-projects').length)
 	{
 		exhibitions();
+	}
+	if($('.vart-about').length)
+	{
+		 digitalArt();
+	}
+	if($('.vart-boost').length)
+	{
+		 seoDigital();
 	}
 });
