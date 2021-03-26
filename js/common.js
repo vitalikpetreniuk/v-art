@@ -11,10 +11,10 @@ var exhibitions_distance;
 
 function loadScripts()
 {
-	let lang_active = $('.header-lang').find('li.active').attr('lang');
-	let lang_active_text = $('.header-lang').find('li.active').text();
+	let lang_active = $('.header-lang').find('li.current-lang').attr('lang');
+	let lang_active_text = $('.header-lang').find('li.current-lang').text();
 
-	$('.header-lang').find('li.active').addClass('hidden');
+	$('.header-lang').find('li.current-lang').addClass('hidden');
 	$('.header-lang').prepend('<span class="active '+lang_active_text+'">'+lang_active_text+'</span>');
 
 	$('.intro-carousel .owl-carousel').on('initialized.owl.carousel changed.owl.carousel', function(e) {
