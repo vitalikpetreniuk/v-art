@@ -132,12 +132,12 @@ function loadScripts()
 		$('body').on('click', '.ch-artwork-tags .ch-at-tags li', function(){
 			if($(this).hasClass('active'))
 			{
-				$(this).removeClass('active');
+				// $(this).removeClass('active');
 
-				if($(this).parents('.ch-artwork-tags').find('.ch-at-tags li.active').length === 0)
-				{
-					$(this).parents('.ch-artwork-tags').find('.ch-at-tags li').eq(0).addClass('active');
-				}
+				// if($(this).parents('.ch-artwork-tags').find('.ch-at-tags li.active').length === 0)
+				// {
+				// 	$(this).parents('.ch-artwork-tags').find('.ch-at-tags li').eq(0).addClass('active');
+				// }
 			}else
 			{
 				// if($(this).index() === 0)
