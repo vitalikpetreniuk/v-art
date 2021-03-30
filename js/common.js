@@ -134,34 +134,50 @@ function loadScripts()
 			{
 				$(this).removeClass('active');
 
-				if($('.ch-artwork-tags .ch-at-tags li.active').length === 0)
+				if($(this).parents('.ch-artwork-tags').find('.ch-at-tags li.active').length === 0)
 				{
-					$('.ch-artwork-tags .ch-at-tags li').eq(0).addClass('active');
+					$(this).parents('.ch-artwork-tags').find('.ch-at-tags li').eq(0).addClass('active');
 				}
 			}else
 			{
-				if($(this).index() === 0)
-				{
-					$('.ch-artwork-tags .ch-at-tags li').removeClass('active');
+				// if($(this).index() === 0)
+				// {
+					$(this).parents('.ch-artwork-tags').find('.ch-at-tags li').removeClass('active');
 					$(this).addClass('active');
-				}else
-				{
-					$(this).addClass('active');
-					if($(this).attr('data-label') !== 'all-genres')
-					{
-						$(this).parent().find('li[data-label="all-genres"]').removeClass('active');
-					}
-				}
+				// }else
+				// {
+				// 	$(this).addClass('active');
+				// 	if($(this).attr('data-label') !== 'all-genres')
+				// 	{
+				// 		$(this).parent().find('li[data-label="all-genres"]').removeClass('active');
+				// 	}
+				// }
 			}
+		})
+
+		$('.ch-at-tags .current-tag').on('click', function(){
+			$(this).parent().find('.ch-at-tags-list').addClass('opened');
+		})
+		$('.ch-at-tags .ch-at-tags-list li').on('click', function(){
+			$(this).parent().find('li').removeClass('active');
+			$(this).addClass('active');
+			
+			$(this).parents('.ch-at-tags').find('.current-tag').text($(this).text());
+			$(this).parents('.ch-at-tags-list').removeClass('opened');
 		})
 	}
 
-	$('.ch-at-tags .current-tag').on('click', function(){
-		$('.ch-at-tags-list').addClass('opened');
-	})
-	$('.ch-at-tags .ch-at-tags-list.opened li').on('click', function(){
-		console.log($(this).text());
-	})
+	if($('.art-chapters-content').length)
+	{
+		$('.chapters-list li a').on('click', function(e){
+			$('.chapters-list li').removeClass('active');
+			$(this).parent().addClass('active');
+
+			e.preventDefault();
+			$('.art-chapters-content .chapter').removeClass('active');
+			$('.art-chapters-content .chapter'+$(this).attr('href')).addClass('active');
+		})
+	}
 }
 function exhibitions()
 {
