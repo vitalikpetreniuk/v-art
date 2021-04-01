@@ -9,6 +9,42 @@ var dartstudio;
 var dartstudio_img;
 var exhibitions_distance;
 
+function ValidateEmail(inputText, parent)
+{
+	var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+	if(inputText.match(mailformat))
+	{
+		parent.addClass('success');
+	}
+	else
+	{
+		parent.addClass('error');
+	}
+}
+ function validatePassword() {
+    var validator = $("#signup").validate({
+        rules: {
+        	password: {
+		      required: true,
+		      minlength: 6
+		    },
+            confirmpassword: {
+                equalTo: "#password"
+            }
+        },
+        messages: {
+            password: "Password",
+            confirmpassword: "Confirm password"
+        }
+    });
+    if (validator.form()) {
+        $('#confirmpassword').parent().addClass('success');
+    }else
+    {
+    	$('#confirmpassword').parent().addClass('error');
+    }
+}
+
 function loadScripts()
 {
 	let lang_active = $('.header-lang').find('li.current-lang').attr('lang');
@@ -178,6 +214,53 @@ function loadScripts()
 			$('.art-chapters-content .chapter'+$(this).attr('href')).addClass('active');
 		})
 	}
+
+	$('.form-eye').on('click', function(){
+		if($(this).parent().hasClass('pass-visible'))
+		{
+			$(this).parent().removeClass('pass-visible');
+			$(this).parent().find('input').attr('type', 'password');
+		}else
+		{
+			$(this).parent().addClass('pass-visible');
+			$(this).parent().find('input').attr('type', 'text');
+		}
+	})
+
+	$('form#signup').find('input').on('focus', function(){
+		$(this).parent().removeClass('error success');
+	})
+	$('form#signup').find('input').on('blur', function(){
+		if($(this).attr('type') === 'email')
+		{
+			if($(this).val() !== '')
+			{
+				ValidateEmail($(this).val(),$(this).parent());
+			}else
+			{
+				$(this).parent().removeClass('error success');
+			}
+
+		}else if($(this).attr('id') === 'confirmpassword')
+		{
+			if($(this).val() !== '')
+			{
+				validatePassword();
+			}else
+			{
+				$(this).parent().removeClass('error success');
+			}
+		}
+	})
+	// $('form#signup').find('input').on('input', function(){
+	// 	if($(this).attr('type') === 'email' && $(this).val() !== '')
+	// 	{
+	// 		ValidateEmail($(this).val());
+	// 	}else
+	// 	{
+	// 		$(this).parent().removeClass('error success');
+	// 	}
+	// })
 }
 function exhibitions()
 {

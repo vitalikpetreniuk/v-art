@@ -26,7 +26,7 @@
 	<link rel="stylesheet" href="css/main.min.css">
 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Press+Start+2P&family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Press+Start+2P&family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 	<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -39,148 +39,87 @@
 
 <body>
 	<div id="wrapper">
-		<header id="vart-header" class="header">
-			<div class="container">
-				<div class="header-logo">
-					<a href="/"><img src="img/logo-white.svg" alt="logo"></a>
-				</div>
-				<div class="mobile-menu" style="display: none;">
-					<button class="menu-toggle"></button>
-				</div>	
-				<nav class="header-nav">
-					<ul class="menu">
-						<li>
-							<a href="#"><span>About V-art</span></a>
-							<div class="submenu">
-								<ul>
-									<li><a href="#">Company</a></li>
-									<li><a href="#">V-Art Platform</a></li>
-									<li><a href="#">V-Art App</a></li>
-								</ul>
-							</div>
-						</li>
-						<li>
-							<a href="#"><span>Digital Art</span></a>
-							<div class="submenu">
-								<ul>
-									<li><a href="#">About Digital Art</a></li>
-									<li><a href="#">Artworks & Artists</a></li>
-									<li><a href="#">Trends</a></li>
-									<li><a href="#">Collections</a></li>
-								</ul>
-							</div>
-						</li>
-						<li>
-							<a href="#"><span>Exibitions & Projects</span></a>
-							<div class="submenu">
-								<ul>
-									<li><a href="#">Exhibitions</a></li>
-									<li><a href="#">Art Space Ship</a></li>
-									<li><a href="#">Digital Art <br> therapy Studio</a></li>
-									<li><a href="#">Studio Events</a></li>
-								</ul>
-							</div>
-						</li>
-						<li><a href="#"><span>News & Articles</span></a></li>
-						<li><a href="#"><span>Contacts</span></a></li>
-					</ul>
-				</nav>
-				<div class="header-lang">
-					<ul>
-						<li><a lang="en" hreflang="en" href="#">En</a></li>
-						<li class="current-lang"><a lang="uk" hreflang="uk" href="#">Uk</a></li>
-						<li><a lang="ru" hreflang="ru" href="#">Ru</a></li>
-					</ul>
-				</div>
-				<div class="header-signin">
-					<a class="vart-link accent" href="#">Sign In</a>
-				</div>
-			</div>
-
-			<div class="vart-menu-mobile" style="display:none;">
-				<nav class="mobile-header-nav">
-					<ul class="menu">
-						<li>
-							<a href="#"><span>About V-art</span></a>
-							<div class="submenu">
-								<ul>
-									<li><a href="#">Company</a></li>
-									<li><a href="#">V-Art Platform</a></li>
-									<li><a href="#">V-Art App</a></li>
-								</ul>
-							</div>
-						</li>
-						<li>
-							<a href="#"><span>Digital Art</span></a>
-							<div class="submenu">
-								<ul>
-									<li><a href="#">About Digital Art</a></li>
-									<li><a href="#">Artworks & Artists</a></li>
-									<li><a href="#">Trends</a></li>
-									<li><a href="#">Collections</a></li>
-								</ul>
-							</div>
-						</li>
-						<li>
-							<a href="#"><span>Exibitions & Projects</span></a>
-							<div class="submenu">
-								<ul>
-									<li><a href="#">Exhibitions</a></li>
-									<li><a href="#">Art Space Ship</a></li>
-									<li><a href="#">Digital Art <br> therapy Studio</a></li>
-									<li><a href="#">Studio Events</a></li>
-								</ul>
-							</div>
-						</li>
-						<li><a href="#"><span>News & Articles</span></a></li>
-						<li><a href="#"><span>Contacts</span></a></li>
-					</ul>
-				</nav>
-			</div>
-			<div class="vart-menu-overlay" style="display:none;"></div>
-		</header>
-
 		<div id="vart-signup">
 			<div class="vl-visual">
 				<img src="img/signup.svg" alt="sign-up">
 			</div>
 			<div class="vl-content">
-				<div class="login-form">
-					<form id="login" method="get" action="/">
-						<span class="form-field form-email">
-							<label>email address:</label>
-							<input type="email" name="email" placeholder="your email address here">
-						</span>
-						<span class="form-field form-password">
-							<label>password:</label>
-							<input type="email" name="password" placeholder="your password here">
-						</span>
-						<span class="form-field form-confirm-password">
-							<label>confirm password:</label>
-							<input type="email" name="confirm-password" placeholder="Confirm your password here">
-
-							<span class="password-requirements">
-								<p>- Password should contain atleast one uppercase</p>
-								<p>- Password length should be minimum of 6 characters</p>
+				<div class="signup-form">
+					<div class="signup-step step1">
+						<form id="signup" method="get" action="/">
+							<span class="form-field form-email">
+								<label>email address:</label>
+								<input type="email" name="email" placeholder="your email address here">
 							</span>
-						</span>
-						<span class="form-field form-firstname">
-							<label>first name:</label>
-							<input type="text" name="first-name" placeholder="your first name">
-						</span>
-						<span class="form-field form-lastname">
-							<label>last name:</label>
-							<input type="text" name="last-name" placeholder="your last name">
-						</span>
-						<span class="form-field form-username">
-							<label>username:</label>
-							<input type="text" name="username" placeholder="enter the desired username">
-						</span>
+							<span class="form-field form-password">
+								<label>password:</label>
+								<input type="password" name="password" placeholder="your password here" id="password">
+								<span class="form-eye"></span>
+							</span>
+							<span class="form-field form-confirm-password">
+								<label>confirm password:</label>
+								<input type="password" name="confirmpassword" placeholder="Confirm your password here" id="confirmpassword">
+								<span class="form-eye"></span>
 
-						<input type="submit" value="Sign Up" class="wpcf7-submit">
-					</form>
-					<div class="sign">
-						Already have an account? <a href="#">Sign In</a>
+								<span class="password-requirements">
+									<p>- Password should contain atleast one uppercase</p>
+									<p>- Password length should be minimum of 6 characters</p>
+								</span>
+							</span>
+							<span class="form-field form-firstname">
+								<label>first name:</label>
+								<input type="text" name="first-name" placeholder="your first name">
+							</span>
+							<span class="form-field form-lastname">
+								<label>last name:</label>
+								<input type="text" name="last-name" placeholder="your last name">
+							</span>
+							<span class="form-field form-username">
+								<label>username:</label>
+								<input type="text" name="username" placeholder="enter the desired username">
+							</span>
+
+							<input type="submit" value="Sign Up" class="wpcf7-submit">
+						</form>
+						<div class="sign">
+							Already have an account? <a href="#">Sign In</a>
+						</div>
+					</div>
+					<div class="signup-step step2" style="display: none;">
+						<div class="registred-as">You are registered as a <span>Spectator</span>.</div>
+						<div class="registred-info">
+							<p>To change or a role, select the items you want to change and click the CONFIRM button.</p>
+							<p>After some verification, you will receive a letter confirming the change of role and get access to the required functionality.</p>
+						</div>
+						<form id="role" method="get" action="/">
+							<div class="radio-list">
+								<label class="v-radio">Artist
+								  <input type="radio" checked="checked" name="radio">
+								  <span class="checkmark"></span>
+								</label>
+								<label class="v-radio">Gallerist
+								  <input type="radio" name="radio">
+								  <span class="checkmark"></span>
+								</label>
+								<label class="v-radio">Curator
+								  <input type="radio" name="radio">
+								  <span class="checkmark"></span>
+								</label>
+								<label class="v-radio">Collector
+								  <input type="radio" name="radio">
+								  <span class="checkmark"></span>
+								</label>
+								<label class="v-radio">Expert
+								  <input type="radio" name="radio">
+								  <span class="checkmark"></span>
+								</label>
+							</div>
+
+							<input type="submit" value="Confirm" class="wpcf7-submit">
+						</form>
+						<div class="sign">
+							Already have an account? <a href="#">Sign In</a>
+						</div>
 					</div>
 				</div>
 
@@ -189,105 +128,6 @@
 				</div>
 			</div>
 		</div>
-
-		<footer id="vart-footer" class="footer">
-			<div class="container">
-				<div class="row">
-					<div class="col col-xl-1 col-lg-1 col-md-2 col-sm-1 col-1">
-						<div class="footer-logo">
-							<a href="/"><img src="img/logo-white.svg" alt="logo"></a>
-						</div>
-						<div class="footer-copyright">© 2020 V-Art</div>
-					</div>
-					<div class="col col-1 col-spacer"></div>
-					<div class="col col-xl-8 col-lg-9 col-md-8 col-sm-9 col-9 col-nav">
-						<div class="footer-nav">
-							<div class="column">
-								<ul>
-									<li>
-										<a href="#">About V-Art</a>
-										<ul class="subnav">
-											<li><a href="#">V-Art Platform</a></li>
-											<li><a href="#">V-Art App</a></li>
-										</ul>
-									</li>
-								</ul>
-							</div>
-							<div class="column">
-								<ul>
-									<li>
-										<a href="#">Digital Art</a>
-										<ul class="subnav">
-											<li><a href="#">About Digital Art</a></li>
-											<li><a href="#">Artworks</a></li>
-											<li><a href="#">Artists</a></li>
-										</ul>
-									</li>
-								</ul>
-							</div>
-							<div class="column">
-								<ul>
-									<li>
-										<a href="#">Exhibitions & Projects</a>
-										<ul class="subnav">
-											<li><a href="#">Exhibitions</a></li>
-											<li><a href="#">Art Space Ship</a></li>
-											<li><a href="#">Digital Art therapy Studio</a></li>
-											<li><a href="#">Studio Events</a></li>
-										</ul>
-									</li>
-								</ul>
-							</div>
-							<div class="column">
-								<ul>
-									<li>
-										<a href="#">More about V-Art</a>
-										<ul class="subnav">
-											<li><a href="#">V-Art Platform</a></li>
-											<li><a href="#">V-Art App</a></li>
-											<li><a href="#">Our Projects</a></li>
-										</ul>
-									</li>
-								</ul>
-							</div>
-							<div class="column">
-								<ul>
-									<li>
-										<a href="#">Legal</a>
-										<ul class="subnav">
-											<li><a href="#">Terms & conditions</a></li>
-											<li><a href="#">Copyright policy</a></li>
-											<li><a href="#">Privacy policy</a></li>
-										</ul>
-									</li>
-								</ul>
-							</div>
-							<div class="column">
-								<ul>
-									<li><a href="#">News & Articles</a></li>
-									<li><a href="#">Contacts</a></li>
-									<li><a href="#">FAQ</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 col-social">
-						<a class="vart-link accent" href="#">Sign In</a>
-						<ul class="vart-social">
-							<li class="facebook"><a href="#"><svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" width="3" height="3" fill="#0000FF"/><rect x="2" y="3" width="3" height="3" fill="#0000FF"/><rect y="6" width="7" height="3" fill="#0000FF"/><rect x="2" y="9" width="3" height="7" fill="#0000FF"/></svg></a></li>
-							<li class="instagram"><a href="#"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" width="10" height="3" fill="#0000FF"/><rect x="10" y="4" width="2" height="2" fill="#0000FF"/><rect y="3" width="3" height="10" fill="#0000FF"/><rect x="13" y="3" width="3" height="10" fill="#0000FF"/><rect x="3" y="13" width="10" height="3" fill="#0000FF"/><circle cx="7.5" cy="8.5" r="2.5" stroke="#0000FF" stroke-width="2"/></svg></a></li>
-							<li class="linkedin"><a href="#"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="16" height="16" fill="#0000FF"/><rect x="2" y="6" width="3" height="8" fill="black"/><rect x="7" y="6" width="3" height="8" fill="black"/><rect x="11" y="7" width="3" height="7" fill="black"/><rect x="9" y="7" width="5" height="3" fill="black"/><rect x="2" y="2" width="3" height="3" fill="black"/></svg></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-
-			<div class="elements">
-				<div class="element footer-el1"><img src="img/footer-el1.png" alt="el1"></div>
-				<div class="element footer-el2"><img src="img/footer-el2.png" alt="el2"></div>
-				<div class="element footer-el3"><img src="img/footer-el3.png" alt="el3"></div>
-			</div>
-		</footer>
 	</div>
 
 	<script src="js/scripts.min.js"></script>
