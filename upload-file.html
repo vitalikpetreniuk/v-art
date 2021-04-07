@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+
+	<title>Upload file - V-Art</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<!-- Template Basic Images Start -->
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="icon" href="img/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+	<!-- Template Basic Images End -->
+	
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="#000">
+	<!-- Custom Browsers Color End -->
+
+	<link rel="stylesheet" href="css/owl.carousel.css">
+	<link rel="stylesheet" href="css/main.min.css">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Press+Start+2P&family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+	<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+
+</head>
+
+<body>
+	<div id="wrapper">
+		<div id="vart-add_artwork">
+			<div class="aa-visual">
+				<img src="img/add-new-artwork.svg" alt="add new artwork">
+			</div>
+			<div class="aa-content">
+				<!-- клас uploaded-files додається коли наявний хоча б один завантажений файл -->
+				<div id="upload-file" class="upload-file">
+					<h4>
+						<span class="upload_file-title">Upload a file <br>to add new artwork</span>
+						<span class="upload_artworks" style="display: none;">Upload new artworks</span>
+					</h4>
+					<!-- клас columns додається для того, щоб розмістити ітеми у 2 колонки, коли в блоці більше 3ох елементів -->
+					<div class="files-list columns">
+						<div class="files-item">
+							<div class="file-close">close</div>
+
+							<div class="file-image"><img src="img/aboutlove1.jpg" alt=""></div>		
+							<div class="file-title">
+								<span>File:</span>
+								<h5>Carpet_of_Promises, Roman_Minin, 2016_140x198cm, any_size...</h5>
+							</div>
+						</div>
+						<div class="files-item">
+							<div class="file-close">close</div>
+							
+							<div class="file-image"><img src="img/aboutlove1.jpg" alt=""></div>		
+							<div class="file-title">
+								<span>File:</span>
+								<h5>Carpet_of_Promises, Roman_Minin, 2016_140x198cm, any_size...</h5>
+							</div>
+						</div>
+						<div class="files-item">
+							<div class="file-close">close</div>
+							
+							<div class="file-image"><img src="img/aboutlove1.jpg" alt=""></div>		
+							<div class="file-title">
+								<span>File:</span>
+								<h5>Carpet_of_Promises, Roman_Minin, 2016_140x198cm, any_size...</h5>
+							</div>
+						</div>
+
+						<div class="files-item">
+							<div class="file-close">close</div>
+
+							<div class="file-image"><img src="img/aboutlove1.jpg" alt=""></div>		
+							<div class="file-title">
+								<span>File:</span>
+								<h5>Carpet_of_Promises, Roman_Minin, 2016_140x198cm, any_size...</h5>
+							</div>
+						</div>
+						<div class="files-item">
+							<div class="file-close">close</div>
+							
+							<div class="file-image"><img src="img/aboutlove1.jpg" alt=""></div>		
+							<div class="file-title">
+								<span>File:</span>
+								<h5>Carpet_of_Promises, Roman_Minin, 2016_140x198cm, any_size...</h5>
+							</div>
+						</div>
+						<div class="files-item">
+							<div class="file-close">close</div>
+							
+							<div class="file-image"><img src="img/aboutlove1.jpg" alt=""></div>		
+							<div class="file-title">
+								<span>File:</span>
+								<h5>Carpet_of_Promises, Roman_Minin, 2016_140x198cm, any_size...</h5>
+							</div>
+						</div>
+					</div>
+
+					<button class="add-another">Add another artwork</button>
+					<div class="add-file">
+						<!-- клас small-box додається для того, щоб зменшити кнопку, коли в блоці files list більше 4ох елементів -->
+						<form class="box" method="post" action="" enctype="multipart/form-data">
+						  <div class="box__input">
+						    <input class="box__file" type="file" name="files[]" id="file" />
+						    <label for="file"><strong>Browse file</strong><span class="box__dragndrop"> or drop a file here</span></label>
+						  </div>
+						</form>
+						<form class="file-url" method="post" action="">
+							<label for="file-url">File URL</label>
+							<input type="text" name="file-url" placeholder="You can paste file URL to upload it">
+							<input type="submit" name="upload" value="">
+						</form>
+					</div>
+				
+					<button class="upload">Upload</button>
+					<span>You can upload up to <strong>6</strong> files per session</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/scripts.min.js"></script>
+</body>
+</html>

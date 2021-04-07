@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+
+	<title>Artwork description - V-Art</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<!-- Template Basic Images Start -->
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="icon" href="img/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+	<!-- Template Basic Images End -->
+	
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="#000">
+	<!-- Custom Browsers Color End -->
+
+	<link rel="stylesheet" href="css/owl.carousel.css">
+	<link rel="stylesheet" href="css/main.min.css">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Press+Start+2P&family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+	<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+
+</head>
+
+<body>
+	<div id="wrapper">
+		<div id="vart-add_artwork">
+			<div class="aa-visual">
+				<img src="img/add-new-artwork.svg" alt="add new artwork">
+			</div>
+			<div class="aa-content">
+				<div id="artwork-info" class="artwork-info">
+					<div class="artwork-description">
+						<h4>Artwork description</h4>
+						<div class="art_d-image"><img src="img/aboutlove1.jpg" alt=""></div>
+						<form class="art_d-form" action="" method="post">
+							<div class="form-column">
+								<span class="form-field form-artwork_title">
+									<label for="artwork-title">artwork title:</label>
+									<input type="text" name="artwork-title" placeholder="Enter artwork title here (max 40 symbols)" maxlength="40">
+								</span>
+								<div class="price-currency">
+									<span class="form-field form-artwork_price">
+										<label for="artwork-price">set price:</label>
+										<input type="text" name="artwork-price" placeholder="How much does it cost">
+									</span>
+									<span class="form-field form-artwork_currency">
+										<label for="artwork-price">currency:</label>
+										<select id="currency" name="currency">
+										  <option>Choose</option>
+										  <option value="UAH">UAH</option>
+										  <option value="USD">USD</option>
+										  <option value="EUR">EUR</option>
+										  <option value="GBP">GBP</option>
+										</select>
+									</span>
+								</div>
+								<span class="form-field form-artwork_genres">     
+									<label>art genres:</label>
+									<ul class="ag-tags">
+										<li data-label="static-imagery">Static imagery</li>
+										<li data-label="time-based-media">Time-based media</li>
+										<li data-label="interactive-installations">Interactive installations</li>
+										<li data-label="xr-vr-ar-art">XR/VR/AR art</li>
+										<li data-label="game-art">Game art</li>
+										<li data-label="generative-art">Generative art</li>
+										<li data-label="net-art">Net art</li>
+										<li data-label="digitalized-art">Digitalized Art</li>
+									</ul>   
+								</span>
+							</div>
+							<div class="form-column">
+								<span class="form-field form-artwork_description form-artwork_description_main">
+									<label for="artwork-description">description:</label>
+									<textarea name="artwork-description" id="artwork-description_main" placeholder="Describe the artwork (max 400 symbols)" maxlength="400"></textarea>
+								</span>
+								<span class="form-field form-artwork_description form-artwork_description_additional">
+									<label for="artwork-description">description:</label>
+									<textarea name="artwork-description" id="artwork-description_additional" placeholder="Describe the artwork (max 200 symbols)" maxlength="200"></textarea>
+								</span>
+							</div>
+
+							<div class="form-buttons">
+								<button>Aditional Description</button>
+								<input type="submit" name="save and continue" value="Save and Continue">
+							</div>
+						</form>
+					</div>
+					<div class="artwork-story"  style="display: none;">
+						<div class="as-top">
+							<div class="top-artwork_description">
+								<div class="description-info">
+									<div class="di-visual">
+										<div class="di-image"><img src="img/aboutlove1.jpg" alt=""></div>
+										<button class="edit edit-d">Edit artwork Description</button>
+									</div>
+									<div class="di-content">
+										<div class="di-author">Anna Manankina</div>
+										<div class="di-title">Multimodality Mode</div>
+										<div class="di-tags">
+											<span>Digital Surrealism</span>
+										</div>
+										<div class="di-price">$400K</div>
+										<div class="di-info">
+											<p>This project is a continuation of my research on communication between people and the possibility of blurring of the boundaries between the objective world and digital reality. Is it possible to artificially create a conflict of verbal and non-verbal information? Is there a fundamental boundary between words, intonations, gestures, facial expressions?</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="top-artwork_history">
+								<h4>Artwork history</h4>
+								<form class="art-history_entry">
+									<span class="form-field entry-year">
+										<label for="artwork-price">year:</label>
+										<select id="currency" name="currency">
+										  <option>Choose a year</option>
+										  <option value="2020">2020</option>
+										  <option value="2019">2019</option>
+										  <option value="2018">2018</option>
+										  <option value="2017">2017</option>
+										  <option value="2016">2016</option>
+										</select>
+									</span>
+									<span class="form-field entry_title">
+										<label for="artwork-title">title:</label>
+										<input type="text" name="artwork-title" placeholder="Input text" maxlength="40">
+									</span>
+									<span class="form-field entry-description">
+										<label for="artwork-description">description:</label>
+										<textarea name="artwork-description" placeholder="Describe the artwork (max 400 symbols)" maxlength="400"></textarea>
+									</span>
+
+									<input type="submit" name="save" value="Save">
+								</form>
+								<div class="histroy-entry_list">
+									<div class="history-entry_item">
+										<div class="he-year">2020</div>
+										<div class="he-info">
+											<div class="he-title">«Artprise». Пре́мія «PinchukArtCentre»</div>
+											<div class="he-description">
+												<p>Перший конкурс Премії «PinchukArtCentre» у 2009 році, до якого долучились понад 1 100 українських молодих художників. На першому конкурсі на премії надійшло понад 6000 заяв зі 125 країн. Відібрали 32 учасника, роботи яких були представлені в «PinchukArtCentre».</p>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<button class="add-entry">Add an entry</button>
+							</div>
+						</div>
+						<div class="as-bottom">
+							<button class="skip">Skip this Step</button>
+							<button class="continue">Save and Continue</button>
+						</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/scripts.min.js"></script>
+</body>
+</html>
