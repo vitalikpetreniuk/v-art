@@ -263,6 +263,18 @@ function loadScripts()
 	// 		$(this).parent().removeClass('error success');
 	// 	}
 	// })
+
+	$('.intro-mobile-info').on('click', function(){
+		$(this).toggleClass('active');
+		$('#vart-content .vart-intro .intro-content').toggleClass('info-visible');
+	})
+
+	$(document).on('click', function (e) {
+	    if ($(e.target).closest(".intro-mobile-info").length === 0 && $(e.target).closest(".ci-artist").length === 0) {
+	        $(this).removeClass('active');
+			$('#vart-content .vart-intro .intro-content').removeClass('info-visible');
+	    }
+	});
 }
 function exhibitions()
 {
@@ -533,9 +545,12 @@ function seoDigital()
 	{
 		let coef;
 
-		if($(window).width() > 1024)
+		if($(window).width() > 1152)
 		{
 			coef = 0.85;
+		}else if($(window).width() < 1152 && $(window).width() > 1024)
+		{
+			coef = 0.66;
 		}else
 		{
 			coef = 0.68;
