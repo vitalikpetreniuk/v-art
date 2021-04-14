@@ -9,6 +9,45 @@ var dartstudio;
 var dartstudio_img;
 var exhibitions_distance;
 
+
+function artworks_carousel()
+{
+	$('.artworks-carousel .owl-carousel').owlCarousel({
+	    loop: true,
+	    nav: true,
+	    dots: false,
+	    slideTransition: 'cubic-bezier(.785,.135,.15,.86) 0s',
+	    responsive : {
+	    	// breakpoint from 0 up
+		    0 : {
+		    	items: 1,
+		        margin: 0
+		    },
+	    	// breakpoint from 768 up
+		    768 : {
+		    	items: 2,
+		        margin: 22
+		    },
+	    	// breakpoint from 1024 up
+		    1024 : {
+		    	items: 3,
+		        margin: 22
+		    },
+	    	// breakpoint from 1152 up
+		    1152 : {
+		        margin: 40
+		    },
+		    // breakpoint from 1281 up
+		    1281 : {
+		        margin: 42
+		    },
+		    // breakpoint from 1441 up
+		    1441 : {
+		        margin: 24
+		    }
+		}
+	});
+}
 function ValidateEmail(inputText, parent)
 {
 	var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -21,7 +60,7 @@ function ValidateEmail(inputText, parent)
 		parent.addClass('error');
 	}
 }
- function validatePassword() {
+function validatePassword() {
     var validator = $("#signup").validate({
         rules: {
         	password: {
@@ -95,12 +134,6 @@ function loadScripts()
 		$('.intro-carousel .owl-next').trigger('click');
 	})
 
-	$('.grid').masonry({
-	  // options
-	  itemSelector: '.grid-item',
-	  gutter: 24
-	});
-
 	$('.vart-head-tabs li a').on('click', function(e){
 		e.preventDefault();
 
@@ -124,43 +157,6 @@ function loadScripts()
 	$('button.menu-toggle').on('click', function(){
 		$('body').toggleClass('mobile-menu-opened');
 	})
-
-
-	$('.artworks-carousel .owl-carousel').owlCarousel({
-	    loop: true,
-	    nav: true,
-	    dots: false,
-	    slideTransition: 'cubic-bezier(.785,.135,.15,.86) 0s',
-	    responsive : {
-	    	// breakpoint from 0 up
-		    0 : {
-		    	items: 1,
-		        margin: 0
-		    },
-	    	// breakpoint from 768 up
-		    768 : {
-		    	items: 2,
-		        margin: 22
-		    },
-	    	// breakpoint from 1024 up
-		    1024 : {
-		    	items: 3,
-		        margin: 22
-		    },
-	    	// breakpoint from 1152 up
-		    1152 : {
-		        margin: 40
-		    },
-		    // breakpoint from 1281 up
-		    1281 : {
-		        margin: 42
-		    },
-		    // breakpoint from 1441 up
-		    1441 : {
-		        margin: 24
-		    }
-		}
-	});
 
 	$('.chapter-artwork_visual button').on('click', function(){
 		$('.chapter-artwork_visual').addClass('active');
@@ -305,7 +301,6 @@ function loadScripts()
 		    $('.ch-at-tags .ch-at-tags-list').removeClass('opened');
 		}
 	});
-
 }
 function exhibitions()
 {
@@ -631,6 +626,7 @@ function seoDigital()
 
 $(function() {
 	loadScripts();
+	artworks_carousel();
 
 	if($('.vart-exhibitions-projects').length)
 	{
