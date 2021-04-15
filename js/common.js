@@ -285,7 +285,7 @@ function loadScripts()
 
 	$(document).on('click', function (e) {
 	    if ($(e.target).closest(".intro-mobile-info").length === 0 && $(e.target).closest(".ci-artist").length === 0) {
-	        $(this).removeClass('active');
+	        $('.intro-mobile-info').removeClass('active');
 			$('#vart-content .vart-intro .intro-content').removeClass('info-visible');
 	    }
 	});
