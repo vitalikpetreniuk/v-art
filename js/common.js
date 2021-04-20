@@ -163,8 +163,12 @@ function loadScripts()
 	})
 	$('.chapter-artwork_visual .vn-fullscreen').on('click', function(){
 		$('body').addClass('visual-lightbox-onscreen');
+		$('.visual-lightbox-close, .visual-fullscreen').addClass('collapse');
 	})
 	$('.visual-lightbox-close').on('click', function(){
+		$('body').removeClass('visual-lightbox-onscreen');
+	})
+	$('body').on('click', '.visual-fullscreen.collapse', function(){
 		$('body').removeClass('visual-lightbox-onscreen');
 	})
 
