@@ -295,14 +295,20 @@ function loadScripts()
 	});
 	$(document).mouseup(function (e)
 	{
-
 		var container = $('.ch-at-tags');
+		var story_form = $('.story_forms-inner');
 
 		if (!container.is(e.target) // if the target of the click isn't the container...
 		    && container.has(e.target).length === 0) // ... nor a descendant of the container
 		{
 		    $('.ch-at-tags').removeClass('in-work');
 		    $('.ch-at-tags .ch-at-tags-list').removeClass('opened');
+		}
+
+		if (!story_form.is(e.target) // if the target of the click isn't the container...
+		    && story_form.has(e.target).length === 0) // ... nor a descendant of the container
+		{
+	    	$('body').removeClass('press-form investor-form partner-form')
 		}
 	});
 
@@ -352,6 +358,20 @@ function loadScripts()
 		team_popup.find('.tph-info').html('');
 		team_popup.find('.tpc-details').html('');
 	})
+
+	$('.os-contact .contact-content .cc-item .cci-content button').on('click', function(){
+		console.log();
+		if($(this).parents('.cc-item').index() === 0)
+		{
+			$('body').addClass('press-form');
+		} else if($(this).parents('.cc-item').index() === 1)
+		{
+			$('body').addClass('investor-form');
+		} else if($(this).parents('.cc-item').index() === 2)
+		{
+			$('body').addClass('partner-form');
+		}
+	});
 }
 function exhibitions()
 {
