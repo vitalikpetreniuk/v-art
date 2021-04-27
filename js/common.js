@@ -158,14 +158,14 @@ function loadScripts()
 		$('body').toggleClass('mobile-menu-opened');
 	})
 
-	$('.chapter-artwork_visual button').on('click', function(){
+	$('body').on('click', '.chapter-artwork_visual button', function(){
 		$('.chapter-artwork_visual').addClass('active');
 	})
-	$('.chapter-artwork_visual .vn-fullscreen').on('click', function(){
+	$('body').on('click', '.chapter-artwork_visual .vn-fullscreen', function(){
 		$('body').addClass('visual-lightbox-onscreen');
 		$('.visual-lightbox-close, .visual-fullscreen').addClass('collapse');
 	})
-	$('.visual-lightbox-close').on('click', function(){
+	$('body').on('click', '.visual-lightbox-close', function(){
 		$('body').removeClass('visual-lightbox-onscreen');
 	})
 	$('body').on('click', '.visual-fullscreen.collapse', function(){
@@ -359,8 +359,7 @@ function loadScripts()
 		team_popup.find('.tpc-details').html('');
 	})
 
-	$('.os-contact .contact-content .cc-item .cci-content button').on('click', function(){
-		console.log();
+	$('body').on('click', '.os-contact .contact-content .cc-item .cci-content button', function(){
 		if($(this).parents('.cc-item').index() === 0)
 		{
 			$('body').addClass('press-form');

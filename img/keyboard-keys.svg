@@ -1,0 +1,38 @@
+<svg width="102" height="67" viewBox="0 0 102 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect y="41" width="3" height="20" fill="#0000FF"/>
+<rect x="29" y="41" width="3" height="20" fill="#0000FF"/>
+<rect x="3" y="38" width="3" height="3" fill="#0000FF"/>
+<rect x="3" y="61" width="3" height="3" fill="#0000FF"/>
+<rect x="26" y="38" width="3" height="3" fill="#0000FF"/>
+<rect x="26" y="61" width="3" height="3" fill="#0000FF"/>
+<rect width="20" height="3" transform="matrix(-1 0 0 1 26 35)" fill="#0000FF"/>
+<rect width="20" height="3" transform="matrix(-1 0 0 1 26 64)" fill="#0000FF"/>
+<path d="M9 59V49H11V47H13V45H19V47H21V49H23V59H19V55H13V59H9ZM13 53H19V49H17V47H15V49H13V53Z" fill="#0000FF"/>
+<rect x="35" y="41" width="3" height="20" fill="#0000FF"/>
+<rect x="64" y="41" width="3" height="20" fill="#0000FF"/>
+<rect x="38" y="38" width="3" height="3" fill="#0000FF"/>
+<rect x="38" y="61" width="3" height="3" fill="#0000FF"/>
+<rect x="61" y="38" width="3" height="3" fill="#0000FF"/>
+<rect x="61" y="61" width="3" height="3" fill="#0000FF"/>
+<rect width="20" height="3" transform="matrix(-1 0 0 1 61 35)" fill="#0000FF"/>
+<rect width="20" height="3" transform="matrix(-1 0 0 1 61 64)" fill="#0000FF"/>
+<path d="M46 59V57H44V55H48V57H54V53H46V51H44V47H46V45H56V47H58V49H54V47H48V51H56V53H58V57H56V59H46Z" fill="#0000FF"/>
+<rect x="35" y="6" width="3" height="20" fill="#0000FF"/>
+<rect x="64" y="6" width="3" height="20" fill="#0000FF"/>
+<rect x="38" y="3" width="3" height="3" fill="#0000FF"/>
+<rect x="38" y="26" width="3" height="3" fill="#0000FF"/>
+<rect x="61" y="3" width="3" height="3" fill="#0000FF"/>
+<rect x="61" y="26" width="3" height="3" fill="#0000FF"/>
+<rect width="20" height="3" transform="matrix(-1 0 0 1 61 0)" fill="#0000FF"/>
+<rect width="20" height="3" transform="matrix(-1 0 0 1 61 29)" fill="#0000FF"/>
+<path d="M46 24V22H44V10H48V18H50V10H52V18H54V10H58V22H56V24H54V22H52V20H50V22H48V24H46Z" fill="#0000FF"/>
+<rect x="70" y="41" width="3" height="20" fill="#0000FF"/>
+<rect x="99" y="41" width="3" height="20" fill="#0000FF"/>
+<rect x="73" y="38" width="3" height="3" fill="#0000FF"/>
+<rect x="73" y="61" width="3" height="3" fill="#0000FF"/>
+<rect x="96" y="38" width="3" height="3" fill="#0000FF"/>
+<rect x="96" y="61" width="3" height="3" fill="#0000FF"/>
+<rect width="20" height="3" transform="matrix(-1 0 0 1 96 35)" fill="#0000FF"/>
+<rect width="20" height="3" transform="matrix(-1 0 0 1 96 64)" fill="#0000FF"/>
+<path d="M79 59V45H89V47H91V49H93V55H91V57H89V59H79ZM83 57H87V55H89V49H87V47H83V57Z" fill="#0000FF"/>
+</svg>
