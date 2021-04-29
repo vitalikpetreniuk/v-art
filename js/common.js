@@ -40,6 +40,7 @@ function artworks_carousel()
 function artworks_space_carousel()
 {
 	$('.sector-carousel').owlCarousel({
+		items: 5,
 	    loop: false,
 	    nav: true,
 	    dots: false,
