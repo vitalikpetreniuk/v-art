@@ -37,6 +37,40 @@ function artworks_carousel()
 		}
 	});
 }
+function artworks_space_carousel()
+{
+	$('.sector-carousel').owlCarousel({
+	    loop: false,
+	    nav: true,
+	    dots: false,
+	    slideTransition: 'cubic-bezier(.785,.135,.15,.86) 0s',
+	    responsive : {
+	    	// breakpoint from 0 up
+		    0 : {
+		    	items: 1
+		    },
+	    	// breakpoint from 768 up
+		    768 : {
+		    	items: 3,
+		    	margin: 12
+		    },
+		    // breakpoint from 768 up
+		    1024 : {
+		    	items: 4,
+		    	margin: 16
+		    },
+		    // breakpoint from 1025 up
+		    1025 : {
+		    	items: 5,
+		    	margin: 16
+		    },
+		    // breakpoint from 1281 up
+		    1281 : {
+	         	margin: 24
+		    }
+		}
+	});
+}
 function team_carousel()
 {
 	$('.team-carousel.owl-carousel').owlCarousel({
@@ -58,7 +92,7 @@ function team_carousel()
 	    	// breakpoint from 1024 up
 		    1024 : {
 		    	items: 2,
-		        margin: 22
+		        margin: 16
 		    },
 		    // breakpoint from 1441 up
 		    1441 : {
@@ -385,10 +419,10 @@ function loadScripts()
 			$('body').addClass('press-form');
 		} else if($(this).parents('.cc-item').index() === 1)
 		{
-			$('body').addClass('investor-form');
+			$('body').addClass('partner-form');
 		} else if($(this).parents('.cc-item').index() === 2)
 		{
-			$('body').addClass('partner-form');
+			$('body').addClass('investor-form');
 		}
 	});
 
@@ -414,12 +448,14 @@ function loadScripts()
 		})
 	}
 
-	$('body').on('click', '.ahr-tabs li', function(){
+	$('body').on('click', '.ahr-tabs li a', function(e){
+		e.preventDefault();
 		let $this = $(this);
 
 		$('.ahr-tabs li').removeClass('selected');
-		$this.addClass('selected');
-
+		$this.parent().addClass('selected');
+		$('.sector').removeClass('selected');
+		$('.sector'+$(this).attr('href')).addClass('selected');
 	})
 }
 function exhibitions()
@@ -747,6 +783,7 @@ function seoDigital()
 $(function() {
 	loadScripts();
 	artworks_carousel();
+	artworks_space_carousel();
 	team_carousel();
 
 	if($('.vart-exhibitions-projects').length)
